@@ -1,0 +1,22 @@
+{
+  "name": "q_chat",
+  "version": "1.0.0",
+  "description": "Q Chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cuongnguyen96/Q_Chat.git"
+  },
+  "author": "Kenvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cuongnguyen96/Q_Chat/issues"
+  },
+  "homepage": "https://github.com/Cuongnguyen96/Q_Chat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
