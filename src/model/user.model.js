@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-let schema = mongoose.schema();
+let Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
     username: String,
