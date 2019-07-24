@@ -3,6 +3,7 @@ import express from "express";
 import ConnectDB from "./config/connectDB";
 //import ContactModel from "./model/contact.model";
 import configViewEngine from "./config/viewEngine";
+import initRoutes from "./routes/web"
 
 // Init app
 let app = express();
@@ -13,16 +14,13 @@ ConnectDB();
 // Congfig view engine
 configViewEngine(app);
 
+// Init all router
+initRoutes(app);
+
 //let hostname = "localhost";
 //let port = 2211;
 
-app.get("/",  (req, res) => {
-    return res.render("main/master");
-});
 
-app.get("/login-register",  (req, res) => {
-    return res.render("auth/loginRegister");
-});
 
 
 app.listen(process.env.APP_PORT, process.env.APP_HOST, ()=>{
