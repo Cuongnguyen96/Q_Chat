@@ -1,12 +1,32 @@
+import {validationResult} from "express-validator/check"
+
 let getloginRegister = (req, res) => {
     return res.render("auth/master");
 };
 
-let getLogout = (req, res) => {
-    // do something
+let postRegister = (req, res) => {
+    //console.log(req.body);
+    //console.log(validationResult(req));
+    //console.log(validationResult(req).isEmpty());
+    //console.log("-----------------------------");
+    //console.log(validationResult(req).mapped());
+    let errorArr = [];
+
+    let validationErrors = validationResult(req);
+    if(!validationErrors.isEmpty()){
+        let errors = Object.values(validationErrors.mapped());
+        //console.log(errors)
+        errors.forEach(item => {
+            errorArr.push(item.msg);
+        });
+        console.log(errorArr);
+        return;
+    }
+    console.log(req.body);
+
 };
 
 module.exports = {
     getloginRegister: getloginRegister,
-    getLogout: getLogout,
+    postRegister: postRegister,
 };

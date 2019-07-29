@@ -4,6 +4,7 @@ import ConnectDB from "./config/connectDB";
 //import ContactModel from "./model/contact.model";
 import configViewEngine from "./config/viewEngine";
 import initRoutes from "./routes/web"
+import bodyParser from "body-parser";
 
 // Init app
 let app = express();
@@ -13,6 +14,9 @@ ConnectDB();
 
 // Congfig view engine
 configViewEngine(app);
+
+// Enable post data request
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Init all router
 initRoutes(app);
