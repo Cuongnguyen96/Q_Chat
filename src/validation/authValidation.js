@@ -7,12 +7,12 @@ let register = [
         .trim(),
     check("gender", transValidation.gender_incorect)
         .isIn(["male", "female"]),
-    check("password", transValidation.passwork_incorect)
+    check("password", transValidation.password_incorect)
         .isLength({min: 8})
         .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/),
-    check("password_confirmation", transValidation.passwork_incorect)
+    check("password_confirmation", transValidation.password_confirmation_incorect)
         .custom((value, {req}) => {
-            return value === req.body.passwork;
+            return value === req.body.password;
         }),
 ];
 
