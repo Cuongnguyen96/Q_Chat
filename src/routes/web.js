@@ -18,9 +18,12 @@ let initRoutes = (app) => {
     router.get("/login-register",  auth.getloginRegister);
     //router.get("/logout",  auth.getLogout);
     router.post("/register", authValid.register, auth.postRegister);
+    router.get("/verify/:token", auth.verifyAccount);
 
     return app.use("/", router);
 }
 
 module.exports = initRoutes;
+
+
 
